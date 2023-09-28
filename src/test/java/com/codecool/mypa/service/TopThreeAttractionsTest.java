@@ -39,9 +39,14 @@ class TopThreeAttractionsTest {
         Set<Ticket> tickets = Set.of(
                 ticket,  ticketTwo, ticketThree, ticketFour, ticketFive, ticketSix, ticketSeven, ticketEight, ticketNine, ticketTen
         );
+
+        Set<Ticket> ticketsTwo = Set.of(
+                ticketFive, ticketSix, ticketSeven, ticket, ticketEight, ticketNine
+        );
         return Stream.of(
                 Arguments.of(Set.of(), List.of() ),
-                Arguments.of(tickets,List.of(waterfall, spring, superStone))
+                Arguments.of(tickets,List.of(waterfall, spring, superStone)),
+                Arguments.of( ticketsTwo ,List.of(spring, superStone, waterfall))
         );
     }
 
